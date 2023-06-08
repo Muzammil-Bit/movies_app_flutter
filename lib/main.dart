@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:movie_app/controllers/movie_controller.dart';
 import 'package:movie_app/ui/pages/home_page.dart';
 
 void main() {
@@ -10,10 +12,16 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    Get.put(MovieController());
+
+    return GetMaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        fontFamily: 'Poppins',
+        textTheme: TextTheme(
+          displayMedium: TextStyle(),
+        ),
       ),
       home: HomePage(),
     );
