@@ -20,7 +20,19 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         fontFamily: 'Poppins',
         textTheme: TextTheme(
-          displayMedium: TextStyle(),
+          displayLarge: TextStyle(
+            fontSize: 16,
+            fontWeight: FontWeight.w600,
+            color: Colors.black,
+          ),
+          displayMedium: TextStyle(
+            fontSize: 14,
+            fontWeight: FontWeight.w400,
+          ),
+          displaySmall: TextStyle(
+            fontSize: 12,
+            fontWeight: FontWeight.w600,
+          ),
         ),
       ),
       home: HomePage(),

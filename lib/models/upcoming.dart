@@ -1,7 +1,7 @@
 class Upcoming {
   Dates dates;
   int page;
-  List<Result> results;
+  List<Movie> results;
   int totalPages;
   int totalResults;
 
@@ -16,7 +16,7 @@ class Upcoming {
   factory Upcoming.fromMap(Map<String, dynamic> json) => Upcoming(
         dates: Dates.fromMap(json["dates"]),
         page: json["page"],
-        results: List<Result>.from(json["results"].map((x) => Result.fromMap(x))),
+        results: List<Movie>.from(json["results"].map((x) => Movie.fromMap(x))),
         totalPages: json["total_pages"],
         totalResults: json["total_results"],
       );
@@ -50,7 +50,7 @@ class Dates {
       };
 }
 
-class Result {
+class Movie {
   bool adult;
   String backdropPath;
   List<int> genreIds;
@@ -66,7 +66,7 @@ class Result {
   double voteAverage;
   int voteCount;
 
-  Result({
+  Movie({
     required this.adult,
     required this.backdropPath,
     required this.genreIds,
@@ -83,7 +83,7 @@ class Result {
     required this.voteCount,
   });
 
-  factory Result.fromMap(Map<String, dynamic> json) => Result(
+  factory Movie.fromMap(Map<String, dynamic> json) => Movie(
         adult: json["adult"],
         backdropPath: json["backdrop_path"],
         genreIds: List<int>.from(json["genre_ids"].map((x) => x)),
